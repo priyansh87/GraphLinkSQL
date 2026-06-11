@@ -1,0 +1,417 @@
+[
+    {
+        "table": "Address",
+        "column": "AddressID",
+        "tags": [
+            "location",
+            "city",
+            "geography",
+            "region",
+            "address"
+        ],
+        "why_tagged": [
+            "matched_col_hint: address"
+        ]
+    },
+    {
+        "table": "Address",
+        "column": "AddressLine1",
+        "tags": [
+            "location",
+            "city",
+            "geography",
+            "region",
+            "address"
+        ],
+        "why_tagged": [
+            "matched_col_hint: address"
+        ]
+    },
+    {
+        "table": "Address",
+        "column": "AddressLine2",
+        "tags": [
+            "location",
+            "city",
+            "geography",
+            "region",
+            "address"
+        ],
+        "why_tagged": [
+            "matched_col_hint: address"
+        ]
+    },
+    {
+        "table": "Address",
+        "column": "City",
+        "tags": [
+            "location",
+            "city",
+            "geography",
+            "region",
+            "address"
+        ],
+        "why_tagged": [
+            "matched_col_hint: city"
+        ]
+    },
+    {
+        "table": "Address",
+        "column": "StateProvince",
+        "tags": [
+            "location",
+            "city",
+            "geography",
+            "region",
+            "address"
+        ],
+        "why_tagged": [
+            "matched_col_hint: state",
+            "matched_col_hint: province"
+        ]
+    },
+    {
+        "table": "Address",
+        "column": "CountryRegion",
+        "tags": [
+            "location",
+            "city",
+            "geography",
+            "region",
+            "address"
+        ],
+        "why_tagged": [
+            "matched_col_hint: country",
+            "matched_col_hint: region"
+        ]
+    },
+    {
+        "table": "Address",
+        "column": "PostalCode",
+        "tags": [
+            "location",
+            "city",
+            "geography",
+            "region",
+            "address"
+        ],
+        "why_tagged": [
+            "matched_col_hint: postal"
+        ]
+    },
+    {
+        "table": "Address",
+        "column": "rowguid",
+        "tags": [
+            "location",
+            "city",
+            "geography",
+            "region",
+            "address"
+        ],
+        "why_tagged": [
+            "matched_context_hint: city",
+            "matched_context_hint: state",
+            "matched_context_hint: postal",
+            "matched_context_hint: address"
+        ]
+    },
+    {
+        "table": "Address",
+        "column": "ModifiedDate",
+        "tags": [
+            "location",
+            "city",
+            "geography",
+            "region",
+            "address"
+        ],
+        "why_tagged": [
+            "matched_context_hint: city",
+            "matched_context_hint: state",
+            "matched_context_hint: postal",
+            "matched_context_hint: address"
+        ]
+    },
+    {
+        "table": "Customer",
+        "column": "CustomerID",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: customerid"
+        ]
+    },
+    {
+        "table": "Customer",
+        "column": "FirstName",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: first"
+        ]
+    },
+    {
+        "table": "Customer",
+        "column": "LastName",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: last"
+        ]
+    },
+    {
+        "table": "Customer",
+        "column": "CompanyName",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: company"
+        ]
+    },
+    {
+        "table": "Customer",
+        "column": "EmailAddress",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: email"
+        ]
+    },
+    {
+        "table": "Customer",
+        "column": "Phone",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: phone"
+        ]
+    },
+    {
+        "table": "CustomerAddress",
+        "column": "CustomerID",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: customerid"
+        ]
+    },
+    {
+        "table": "CustomerAddress",
+        "column": "AddressID",
+        "tags": [
+            "location",
+            "city",
+            "geography",
+            "region",
+            "address"
+        ],
+        "why_tagged": [
+            "matched_col_hint: address"
+        ]
+    },
+    {
+        "table": "CustomerAddress",
+        "column": "AddressType",
+        "tags": [
+            "location",
+            "city",
+            "geography",
+            "region",
+            "address"
+        ],
+        "why_tagged": [
+            "matched_col_hint: address"
+        ]
+    },
+    {
+        "table": "CustomerAddress",
+        "column": "rowguid",
+        "tags": [
+            "location",
+            "city",
+            "geography",
+            "region",
+            "address"
+        ],
+        "why_tagged": [
+            "matched_context_hint: address",
+            "matched_context_hint: location"
+        ]
+    },
+    {
+        "table": "CustomerAddress",
+        "column": "ModifiedDate",
+        "tags": [
+            "location",
+            "city",
+            "geography",
+            "region",
+            "address"
+        ],
+        "why_tagged": [
+            "matched_context_hint: address",
+            "matched_context_hint: location"
+        ]
+    },
+    {
+        "table": "ErrorLog",
+        "column": "ErrorState",
+        "tags": [
+            "location",
+            "city",
+            "geography",
+            "region",
+            "address"
+        ],
+        "why_tagged": [
+            "matched_col_hint: state"
+        ]
+    },
+    {
+        "table": "Product",
+        "column": "ProductID",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: product"
+        ]
+    },
+    {
+        "table": "Product",
+        "column": "ProductNumber",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: product"
+        ]
+    },
+    {
+        "table": "Product",
+        "column": "ProductCategoryID",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: product",
+            "matched_deny_list: category"
+        ]
+    },
+    {
+        "table": "Product",
+        "column": "ProductModelID",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: product"
+        ]
+    },
+    {
+        "table": "ProductCategory",
+        "column": "ProductCategoryID",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: product",
+            "matched_deny_list: category"
+        ]
+    },
+    {
+        "table": "ProductCategory",
+        "column": "ParentProductCategoryID",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: product",
+            "matched_deny_list: category"
+        ]
+    },
+    {
+        "table": "ProductDescription",
+        "column": "ProductDescriptionID",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: product",
+            "matched_deny_list: description"
+        ]
+    },
+    {
+        "table": "ProductDescription",
+        "column": "Description",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: description"
+        ]
+    },
+    {
+        "table": "ProductModel",
+        "column": "ProductModelID",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: product"
+        ]
+    },
+    {
+        "table": "ProductModel",
+        "column": "CatalogDescription",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: description"
+        ]
+    },
+    {
+        "table": "ProductModelProductDescription",
+        "column": "ProductModelID",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: product"
+        ]
+    },
+    {
+        "table": "ProductModelProductDescription",
+        "column": "ProductDescriptionID",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: product",
+            "matched_deny_list: description"
+        ]
+    },
+    {
+        "table": "SalesOrderDetail",
+        "column": "ProductID",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: product"
+        ]
+    },
+    {
+        "table": "SalesOrderHeader",
+        "column": "AccountNumber",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: account"
+        ]
+    },
+    {
+        "table": "SalesOrderHeader",
+        "column": "CustomerID",
+        "tags": [],
+        "why_rejected": [
+            "matched_deny_list: customerid"
+        ]
+    },
+    {
+        "table": "SalesOrderHeader",
+        "column": "ShipToAddressID",
+        "tags": [
+            "location",
+            "city",
+            "geography",
+            "region",
+            "address"
+        ],
+        "why_tagged": [
+            "matched_col_hint: address"
+        ]
+    },
+    {
+        "table": "SalesOrderHeader",
+        "column": "BillToAddressID",
+        "tags": [
+            "location",
+            "city",
+            "geography",
+            "region",
+            "address"
+        ],
+        "why_tagged": [
+            "matched_col_hint: address"
+        ]
+    }
+]

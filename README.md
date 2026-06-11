@@ -39,6 +39,39 @@ When executing this **SchemaNavigator Hybrid Pipeline** on a frontier model (`Gr
 
 ---
 
+## Key Engineering Observations
+
+Throughout the development and rigorous evaluation of this pipeline, several core insights emerged about the nature of Text-to-SQL architecture:
+
+1. **Semantic Relevance != Schema Relevance**
+   CrossEncoder relevance scores do not correlate with schema importance. Tables like `Address` and `ProductCategory` were essential for correct SQL generation but consistently received low semantic scores because they represented attributes rather than primary entities in the user query.
+
+2. **Retrieval Success != Reasoning Success**
+   Retrieving the correct table is not enough. The system must identify that table as structurally important and expose it to downstream graph reasoning. Missing anchor tables caused graph traversal failures even when the correct tables were present in retrieval results.
+
+3. **Reranking Can Hurt Structured Reasoning**
+   Traditional reranking improved semantic relevance but reduced SQL accuracy. Rerankers compressed structurally important tables into low-scoring buckets, preventing the graph from discovering valid multi-hop join paths.
+
+4. **Connected Context Beats Large Context**
+   Providing a smaller but fully connected subgraph produced significantly better SQL generation than supplying a large collection of disconnected schema chunks.
+
+5. **Graph Structure Is More Valuable Than Raw Retrieval**
+   Foreign-key relationships contain powerful reasoning signals. Graph expansion enabled the system to discover tables naturally through schema topology rather than semantic similarity alone.
+
+6. **Multi-Hop SQL Is Primarily a Retrieval Problem**
+   Many SQL generation failures initially appeared to be LLM reasoning limitations. Detailed tracing revealed that most errors originated from missing schema context rather than model limitations.
+
+7. **Better Retrieval Reduces Dependence on Larger Models**
+   After improving retrieval and graph expansion, smaller local models produced outputs similar to frontier models on many benchmark queries, demonstrating that retrieval quality often has a greater impact than raw model parameter size for this task.
+
+8. **Observability Accelerates Iteration**
+   MLflow-based query tracing enabled the inspection of retrieved tables, graph paths, generated SQL, latency, and evaluation metrics for every query, allowing rapid identification of bottlenecks and data-driven improvements.
+
+9. **Schema Navigation Is A Distinct Problem**
+   Text-to-SQL is not solely a language understanding problem. It is fundamentally a schema navigation problem that requires discovering relevant regions of a relational graph before SQL generation can occur.
+
+---
+
 ## Analytics Dashboard
 
 We include a standalone **Streamlit + Plotly Dashboard** for visualizing the real-time performance and pipeline flow (including an interactive Sankey diagram of the architecture).
